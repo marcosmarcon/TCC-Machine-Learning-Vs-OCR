@@ -1,0 +1,5 @@
+Protótipo para aprendizagem, autor da fonte do estudo:
+
+https://www.youtube.com/watch?v=fJcl6Gw1D8k
+
+https://github.com/MicrocontrollersAndMore/OpenCV_3_License_Plate_Recognition_Python

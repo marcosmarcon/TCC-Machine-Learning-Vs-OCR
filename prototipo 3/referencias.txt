@@ -1,0 +1,4 @@
+
+Protótipo indo um pouco mais além, autor da fonte do estudo.
+
+http://doc.openalpr.com/opensource.html#compiling
