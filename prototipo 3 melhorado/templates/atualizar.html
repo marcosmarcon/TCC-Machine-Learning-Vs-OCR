@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="static/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+
+
+		<div class="page-header">
+			<h1>Atualizar </h1>
+		</div>
+		<div class="panel-body">
+			<form class="navbar-form navbar-left" method="POST" action="">
+				<table>
+						<tr>
+							<td>Placa:</td>
+							<td><input type="text" class="form-control" name="id" value="{{ carro.id }}"></td>
+						</tr>
+						<tr>
+							<td>Ano:</td>
+							<td><input type="text" class="form-control" name="ano" value="{{ carro.ano }}"></td>
+						</tr>
+						<tr>
+							<td>Cor:</td>
+							<td><input type="text" class="form-control" name="cor" 				 					   				   value="{{ carro.cor }}"></td>
+						</tr>
+						<tr>
+							<td>Modelo:</td>
+							<td><input type="text" class="form-control" name="modelo" 									   value="{{ carro.modelo }}"></td>
+						</tr>
+
+					</table><br>
+				 
+
+				<input type="submit" class="btn btn-warning" value="Atualizar">
+				<a href="{{ url_for('home') }}">
+				<input type="button" class="btn btn-primary" value="Voltar"></a>
+			</form>
+
+		</div>
+	</body>
+</html>
+
+
+
+
+
