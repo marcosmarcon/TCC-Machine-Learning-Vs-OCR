@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pesquisar</title>
+		<meta charset="UTF-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="static/js/bootstrap.min.js"></script>
+	<body>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">OpenVCR</a>
+    </div>
+    <ul class="nav navbar-nav">  
+      <li><a href="{{ url_for('entradas') }}">Início</a></li>
+      <li><a href="{{ url_for('cadastrar') }}">Cadastro</a></li>
+      <li class="active"><a href="{{ url_for('entradas') }}">Listar</a></li>
+      
+    </ul>
+  </div>
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+ 
+</nav>
+
+		<div class="page-header">
+			<h1>Lista de Veículos</h1>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar" title="Type in a name">
+		</div>
+
+		<table  
+		      id="table"
+		      class="table"  
+		      data-toggle="true"
+		      data-toolbar="#toolbar"
+		      data-search="true"
+		      data-show-columns="true"
+		      data-pagination="true"
+		      data-height="500">
+			<tr>
+				<td>Placa</td>
+				<td>Ano</td>
+				<td>Cor</td>
+				<td>Modelo</td>
+			</tr>
+			{% for carro in carro %}
+				<tr>
+					<td>{{ carro.id }}</td>
+					<td>{{ carro.ano }}</td>
+					<td>{{ carro.cor }}</td>
+					<td>{{ carro.modelo }}</td>
+					<td><center><a title="Deletar" id="{{ carro.id }}" href="/excluir/{{ carro.id }}">Remover</a></center></td>
+					<td><center><a href="/atualizar/{{ carro.id }}" onclick="myFunction()" >Alterar</a></center></td>
+				</tr>
+				<script type="text/javascript">
+				document.getElementById('{{ carro.id }}').onclick = function(e){
+				    if( !confirm('Tem certeza que deseja excluir ?') ) {
+					e.preventDefault();
+				    }
+				}
+				</script>
+			{% endfor %}
+		</table><br>
+		<a href="{{ url_for('entradas') }}"><input type="button" class="btn btn-primary" value="Voltar"></a>
+	</body>
+
+
+
+
+
+
+
+
+
+</html>

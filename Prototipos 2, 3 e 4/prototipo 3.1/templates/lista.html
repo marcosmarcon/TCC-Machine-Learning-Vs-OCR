@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pesquisar</title>
+		<meta charset="UTF-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="static/js/bootstrap.min.js"></script>
+	<body>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">OpenVCR</a>
+    </div>
+    <ul class="nav navbar-nav">  
+      <li><a href="{{ url_for('home') }}">Início</a></li>
+      <li><a href="{{ url_for('cadastrar') }}">Cadastro</a></li>
+      <li class="active"><a href="{{ url_for('lista') }}">Listar</a></li>
+      
+    </ul>
+  </div>
+</nav>
+		<div class="page-header">
+			<h1>Lista de Veículos</h1>
+		</div>
+		<table  class="table"  
+			data-toggle="true"
+		      data-toolbar="#toolbar"
+		      data-search="true"
+		      data-show-columns="true"
+		      data-pagination="true"
+		      data-height="500">
+			<tr>
+				<td>Placa</td>
+				<td>Ano</td>
+				<td>Cor</td>
+				<td>Modelo</td>
+			</tr>
+			{% for carro in carro %}
+				<tr>
+					<td>{{ carro.id }}</td>
+					<td>{{ carro.ano }}</td>
+					<td>{{ carro.cor }}</td>
+					<td>{{ carro.modelo }}</td>
+					<td><center><a href="/excluir/{{ carro.id }}">Remover</a></center></td>
+					<td><center><a href="/atualizar/{{ carro.id }}">Alterar</a></center></td>
+				</tr>
+			{% endfor %}
+		</table><br>
+		<a href="{{ url_for('home') }}"><input type="button" class="btn btn-primary" value="Voltar"></a>
+	</body>
+</html>
