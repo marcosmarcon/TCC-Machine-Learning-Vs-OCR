@@ -1,4 +1,5 @@
-Devido aos melhores resultados do protótipo 3, ele foi o escolhido por ter obtido os melhores resultados. Este protótipo utiliza a biblioteca Openalpr, e para ser utilizado necessita da instalação desta biblioteca bem como os seus pre-requisitos.
+﻿Devido ao protótipo 3 ter obtido melhores resultados no projeto em comparação aos demais protótipos,  foi o escolhido como base para o restante do projeto. 
+Este protótipo utiliza a biblioteca Openalpr, e para ser utilizado necessita da instalação desta biblioteca bem como os seus pre-requisitos.
 
 A instalação da biblioteca e seus pre-requisitos pode ser conferida no site do próprio desenvolvedor.
 
